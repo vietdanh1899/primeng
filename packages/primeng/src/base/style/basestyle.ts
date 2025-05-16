@@ -209,7 +209,7 @@ export class BaseStyle {
 
     load = (style, options = {}, transform = (cs) => cs) => {
         const computedStyle = transform(resolve(style, { dt }));
-        return computedStyle ? this.useStyle.use(minifyCSS(computedStyle), { name: this.name, ...options }) : {};
+        return computedStyle ? this.useStyle.use(computedStyle, { name: this.name, ...options }) : {};
     };
 
     loadCSS = (options = {}) => {
